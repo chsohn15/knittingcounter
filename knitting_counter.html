@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+                document.addEventListener('DOMContentLoaded', function(){
+                document.querySelector('#add').onclick = add_one;
+           
+                /*document.querySelector('#subract').onclick = subtract_one;*/
+
+                document.querySelector('#form').onsubmit = function(){
+                const row_reminder = document.querySelector('#rows').value;
+
+                /*alert(`The numer you entered is ${row_reminder}`);*/
+                }
+            })
+
+            let counter = 0;
+
+            function add_one() {
+
+                counter ++;
+                document.querySelector('#counter').innerHTML = counter;
+
+                if (counter % row_reminder === 0) {
+                alert (`Counter is at ${counter}`);
+                }
+            }
+
+            function subtract_one(){
+                if (counter > 0){
+                counter--;
+                document.querySelector('#counter').innerHTML = counter;
+                }
+            }
+            
+            function reminder(row_reminder){
+                if (counter % row_reminder === 0) {
+                alert (`Counter is at ${counter}`);
+                }
+            }
+
+        </script>
+        <link rel="stylesheet" href="knitting_counter.css">
+        <title>The Knitting Counter</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>The Knitting Counter</h1>
+            <h2 id = "counter">0</h2>
+            <button id = "add">Add new row to counter</button>
+            <button onclick ="subtract_one()" id = "subtract">Subtract row from counter</button>
+            <p>
+                How often do you want a reminder? 
+                <form id = "form">
+                    I would like an alert for every <input id = "rows" type ="text"> rows.
+                    <input type = "submit"> 
+                </form>
+            </p>
+        </div>
+    </body>
+</html>
